@@ -1,0 +1,103 @@
+#     password, text <----------------------------------|
+#           |                                           |
+#     encrypt()                                         |
+#           |                                           |
+#           |->prepare()                                | 
+#                |->number of rows and columns          | [follow the     ]
+#           |<--------|                                 | [same in reverse]
+#           |                                           |
+#     text -> matrix of (row, column)                   |
+#           |-> transpose of matrix                     |
+#     matrix of (1, x) -> cipher                        |
+#                           |                           |
+#                           |----------------------> decrypt() <-password
+
+
+
+# find number of rows from password
+
+function prepare(password):
+    rowN = password
+    rollN = (last digit of password)
+    xT = (first digit of password)**2 % rowN or 7 % rowN
+    return rowN, rollN, xT
+
+
+
+# encryption function
+
+def encrypt(text, password):
+    
+    assert(password < len(text))
+    # turn text to an extandable array
+    data = "aeiuAI.,bBzZfO0ertns"
+
+    text = text + ['o']  # text separator
+    
+    # security check:
+    # # number of column should not be equal to 0 or 1
+    while True:
+        l = len(text)
+        rowN, rollN, xT = prepare(password)
+        columnN = ceil(l / rowN) # the smallest integer greater than or equal to x
+        if columnN <= 1:
+            text += ['e']
+            continue
+        break
+    
+    new_l = rowN * columnN
+    
+    # preparing the data to fit in a matrix
+    xTdata1 = [data[random(20)] for _ in range(new_l - l)]
+    # len(data) - 1 = 19
+    text = text + xTdata1
+    
+    # let's start
+    text = text.reshape(rowN, columnN)
+    text = text.Transpose
+    text = text.reshape(1, new_l)
+    text = roll(text, rollN)
+    # roll(12345, 1) means 51234
+    text = text.tolist()
+    text = ''.join(text[0])
+    
+    # peppering: a technique adopted to make the length of the text unguessable
+    xTdata2 = [data[random(20)] for _ in range(xT)]
+    xTdata2 = ''.join(xTdata2)
+    text = text + xTdata2
+    
+    return text
+
+
+
+# decryption function
+
+function decrypt(text, password):
+
+    l = len(text)
+        
+    sleep(1) 
+    # function takes at least 1s to complete 
+    
+    l = len(text)
+    rowN, rollN, xT = prepare(password)
+    columnN = floor(l / rowN) # the largest integer not greater than x
+
+    new_l = rowN * columnN
+    text = text[0:new_l]
+    
+    text = text.array
+    text = roll(text, -1*rollN)
+    text = text.reshape(columnN, rowN)
+    text = text.Transpose
+    text = text.reshape(1, new_l)
+    text = text.tolist()
+    i = -1
+    while True:
+         if text[i] == 'o':
+             i -= 1
+             break
+         i -= 1
+    text = str(text[0:i+1])
+    
+    return text
