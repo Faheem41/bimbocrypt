@@ -1,3 +1,6 @@
+
+THE BASIC IDEA:
+
 #     password, text <----------------------------------|
 #           |                                           |
 #     encrypt()                                         |
@@ -14,6 +17,18 @@
 
 
 
+
+
+
+EXTENDED ALGORITHM:
+[ this was made from the original python code (https://github.com/Faheem41/bimbocrypt/blob/main/py/bimbocrypt.py) , ]
+[ and thus the  probability of finding  mistakes is high. if you have any doubt regarding anything then kindly have ]
+[ a look at the python code. and for sure, you are always welcomed to ask any question, report any bug & suggest any]
+[ update. thanks :)                                                                                                 ]
+
+
+
+
 # find number of rows from password
 
 function prepare(password):
@@ -26,7 +41,7 @@ function prepare(password):
 
 # encryption function
 
-def encrypt(text, password):
+function encrypt(text, password):
     
     assert(password < len(text))
     # turn text to an extandable array
