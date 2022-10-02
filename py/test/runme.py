@@ -15,6 +15,7 @@ TEXT = "Bangalees have a rich literary heritage. The earliest available specimen
 PASSWORD = "10"
 
 print("Original Text: ", TEXT)
+print("Password: ", PASSWORD)
 
 encrypted_text = bimbocrypt.encrypt(TEXT, PASSWORD)
 print("Encrypted Text: ", encrypted_text)
