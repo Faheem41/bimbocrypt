@@ -14,7 +14,7 @@ All changes to this project will be documented in this file.
 
 ## [1.1.22] - 03-10-22 - *Security Update*
 ### Added
-- function *prepare()* is coverted to private function using <a href="https://github.com/Faheem41/Private-Function-in-Python" rel="noreferrer">Home</a> so that it cannot be called from elsewhere
+- function *prepare()* is coverted to private function using <a href="https://github.com/Faheem41/Private-Function-in-Python" rel="noreferrer">privatefunc</a> so that it cannot be called from elsewhere
 </br>
 
 
