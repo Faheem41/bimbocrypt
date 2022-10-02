@@ -20,7 +20,7 @@
 
 
 #! /usr/bin/env python3
-# binbocrypt.py
+# bimbocrypt.py
 # a code to encrypt and decrypt text
 
 
@@ -29,7 +29,9 @@ from math import ceil, floor
 from time import sleep
 import numpy as np
 from secrets import randbelow
-# 'Herr Rozwel' suggested the secrets module instead of random module 
+# 'Herr Rozwel' suggested the secrets module instead of random module
+from privatefunc import PrivateFunc
+privatefunc = PrivateFunc("bimbocrypt")
 
 
 
@@ -40,7 +42,7 @@ class DangerousInput(Exception):
     def __init__(self, mssg):
         self.mssg = mssg
         super().__init__(self.mssg)
-        
+
     def __str__(self):
         return f'{self.mssg}'
 
@@ -48,6 +50,7 @@ class DangerousInput(Exception):
 
 # find number of rows from password
 
+@privatefunc.private
 def prepare(password):
     rowN = int(password)
     rollN = int(str(password)[-1])
@@ -60,7 +63,7 @@ def prepare(password):
 # encryption function
 
 def encrypt(text, password):
-    
+
     text = text.replace('', ' ').split(' ')
     del(text[0], text[-1])
     l = len(text)
@@ -72,7 +75,7 @@ def encrypt(text, password):
                 text[i] = ' '
                 l = len(text)
         i += 1
-        
+
     try:
         p = int(password)
         assert(p < len(text))
@@ -84,15 +87,15 @@ def encrypt(text, password):
         raise DangerousInput(
             "\nTRY USING A PASSWORD LESS THAN: " + str(len(text))
         )
-    
+
     data = "aeiuAI.,bBzZfO0ertns" \
             .replace('', ' ') \
             .split(' ')
     del(data[0], data[-1])
 
-    
+
     text += ['o']  # text separator
-    
+
     # security check:
     # # number of column should not be equal to 0 or 1
     while True:
@@ -103,17 +106,17 @@ def encrypt(text, password):
             text += ['e']
             continue
         break
-    
+
     new_l = rowN * columnN
     # print(rowN, columnN, rollN, xT, 111)
     # print(text, 1)
-    
+
     # preparing the data to fit in a matrix
     xTdata1 = [data[randbelow(20)] for _ in range(new_l - l)]
     # len(data) - 1 = 19
     text += xTdata1
     # print(text, 2)
-    
+
     # let's start
     text = np.array(text) \
            .reshape(rowN, columnN) \
@@ -124,13 +127,13 @@ def encrypt(text, password):
     # print(text, 4)
     text = text.tolist()
     text = ''.join(text[0])
-    
+
     # a technique adopted to make the length of the text unguessable
     xTdata2 = [data[randbelow(20)] for _ in range(xT)]
     xTdata2 = ''.join(xTdata2)
     text += xTdata2
     # print(text, 'end')
-    
+
     return text
 
 
@@ -150,17 +153,17 @@ def decrypt(text, password):
                 text[i] = ' '
                 l = len(text)
         i += 1
-        
+
     try:
         p = int(password)
     except ValueError:
         raise DangerousInput(
             "\nWRONG PASSWORD"
         )
-        
-    sleep(1) 
-    # function takes at least 1s to complete 
-    
+
+    sleep(1)
+    # function takes at least 1s to complete
+
     l = len(text)
     rowN, rollN, xT = prepare(p)
     columnN = floor(l / rowN)
@@ -170,7 +173,7 @@ def decrypt(text, password):
     new_l = rowN * columnN
     text = text[:new_l]
     # print(text, 2)
-    
+
     text = np.array(text)
     text = np.roll(text, -1*rollN)
     # print(text, 3)
@@ -189,7 +192,6 @@ def decrypt(text, password):
          i -= 1
     text = text[:i+1]
     # print(text, 5)
-    
+
     return text
-  
-  
+
