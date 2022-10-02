@@ -18,3 +18,8 @@ And then:
 pip install privatefunc
 ```
 Then copy the files in your repository and run *runme.py*
+
+
+#
+----------------
+<h6 align="center">© 2021-2022 Md. Faheem Hossain fmhossain2941@gmail.com</h6>
