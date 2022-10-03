@@ -27,10 +27,22 @@
 
 from math import ceil, floor
 from time import sleep
-import numpy as np
 from secrets import randbelow
 # 'Herr Rozwel' suggested the secrets module instead of random module
-from privatefunc import PrivateFunc
+
+try:
+    import numpy as np
+except ModuleNotFoundError:
+    import importlib
+    importlib.import_module("os").system("pip install numpy -qq")
+    import numpy as np
+
+try:
+    from privatefunc import PrivateFunc
+except ModuleNotFoundError:
+    import importlib
+    importlib.import_module("os").system("pip install privatefunc -qq")
+    from privatefunc import PrivateFunc
 privatefunc = PrivateFunc("bimbocrypt")
 
 
@@ -194,4 +206,3 @@ def decrypt(text, password):
     # print(text, 5)
 
     return text
-
