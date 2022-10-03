@@ -12,7 +12,12 @@
 All changes to this project will be documented in this file.
 </br></br></br>
 
-## [1.1.22] - 03-10-22 - *Security Update*
+## [1.2.22] - 03-10-22 - *Update for Good*
+### Added
+- dependecies are downloaded and handled automatically
+</br>
+
+## [1.1.22] - 02-10-22 - *Security Update*
 ### Added
 - function *prepare()* is coverted to private function using <a href="https://github.com/Faheem41/Private-Function-in-Python" rel="noreferrer">privatefunc</a> so that it cannot be called from elsewhere
 </br>
