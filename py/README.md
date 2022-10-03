@@ -8,7 +8,7 @@
 ----------------
 
 
-Here goes the implementation of **Bimbocrypt** in ...
+Welcome to the implementation of **Bimbocrypt** in ...
 ## Python
 
 Things are now easier than ever. Previously one need to download dependencies like *numpy* and *privatefunc*. In the latest <a href="https://github.com/Faheem41/bimbocrypt/blob/main/py/version/bimbocrypt-1.2.22.py" rel="noreferrer">1.2.22</a> update everything is taken care of automatically. No hastle, just download the <a href="https://github.com/Faheem41/bimbocrypt/blob/main/py/src/bimbocrypt.py" rel="noreferrer">bimbocrypt.py</a> and use it. Otherwise have a look at the <a href="https://github.com/Faheem41/bimbocrypt/blob/main/py/test" rel="noreferrer">demo code</a>. </br>
