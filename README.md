@@ -14,7 +14,7 @@
     <ul>
         <li><a href="https://github.com/Faheem41/bimbocrypt/blob/main/py" target="_blank" rel="noreferrer">Python</a></li>
     </ul>
-    [ It is highly encouraged to share your implementations of the <a href="https://github.com/Faheem41/bimbocrypt/blob/main/ALGORITHM" target="_blank" rel="noreferrer">algorithm</a> in other languages ()rles*** ]
+    [ It is highly encouraged to share your implementations of the <a href="https://github.com/Faheem41/bimbocrypt/blob/main/ALGORITHM" target="_blank" rel="noreferrer">algorithm</a> in other languages <a href="https://github.com/Faheem41/bimbocrypt/discussions/1#discussion-4442226" target="_blank" rel="noreferrer">(guidelines)</br></a ]
 </p>
 </br>
 
