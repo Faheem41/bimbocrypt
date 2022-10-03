@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/pip-Download-purple" />
+<img src="/logo/logo.png" />
 
 <h4 align="center">B I M B O C R Y P T</h4>
 <h2 align="center">from <a href="https://faheem41.github.io" target="_blank" rel="noreferrer">FAHEEM41</br></a></h2>
