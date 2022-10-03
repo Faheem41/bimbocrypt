@@ -9,15 +9,9 @@
 ----------------
 
 
-Type in terminal:
-```
-pip install numpy
-```
-And then:
-```
-pip install privatefunc
-```
-Then copy the files in your repository and run *runme.py*
+Things are now easier then ever</br>
+just copy the files in your repository and</br>
+### run *runme.py*
 
 
 #
