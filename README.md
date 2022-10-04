@@ -22,9 +22,9 @@
 <h2>Theory...</h2>
   
 ```
-Let  TABLE1 = matrix (m, n)    <- original text</br>
-So   TABLE2 = TABLE1.transpose <- encrypted text</br>
-&    TABLE3 = TABLE2.transpose <- decrypted text</br>
+Let  TABLE1 = matrix (m, n)    <- original text
+So   TABLE2 = TABLE1.transpose <- encrypted text
+&    TABLE3 = TABLE2.transpose <- decrypted text
 Here TABLE1 == TABLE2 ??? --> TRUE
 ```
 
