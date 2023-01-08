@@ -1,5 +1,5 @@
 """
-  Copyright (C) 2021-2022 Md. Faheem Hossain fmhossain2941@gmail.com
+  Copyright (C) 2021-2023 Md. Faheem Hossain fmhossain2941@gmail.com
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
   in the Software without restriction, including without limitation the rights
